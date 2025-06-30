@@ -12,7 +12,7 @@ class ManifestReader():
         self.entries = []
         for line in manifest.splitlines():
             line = line.rstrip()
-            checksum, path = re.split(r"\s+", line, 1)
+            checksum, path = re.split(r"\s+", line, maxsplit=1)
             self.entries.append({
                 "path": path,
                 "checksum": checksum,
